@@ -3,6 +3,7 @@ import requests
 import webbrowser
 import sys
 import os
+import time
 import pyfiglet
 import colorama
 from colorama import Fore , Back , Style
@@ -54,6 +55,12 @@ def common():
 	mycode.write(soup.prettify())
 	mycode.close()
 	print("Your file is save")
+	time.sleep(2)
+	print("")
+
+
+
+		
 
 
 	
@@ -70,19 +77,24 @@ def gethref(self):
 		elif link[0] == "/" and link != "#":
 			print("Links in website :  " + link)
 
-print(gren+b+'''
+
+while True:
+	
+	os.system('clear')
+	logo()
+	first()
+	print(gren+b+'''
 [1] Copy website code
 [2] Get all href link in website
 [3] Exit
 '''+b+gren)
-a = int(input(cyan+b+"SELECT OPTION : "+b+cyan))
-if a == 1:
-	common()
-elif a == 2:
-	gethref('h')
-elif a== 3:
-	exit()
-
+	a = int(input(cyan+b+"SELECT OPTION : "+b+cyan))
+	if a == 1:
+		common()
+	elif a == 2:
+		gethref('h')
+	elif a== 3:
+		exit()
 
 
 
